@@ -1,0 +1,2 @@
+# chartmapper
+global chart map
