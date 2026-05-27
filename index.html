@@ -827,6 +827,61 @@ footer {
   border: 1px solid var(--border-mid);
 }
 
+/* ── NOTABLE CHANGES ──────────────────────────── */
+.changes-section { border-top: 1px solid var(--border); }
+.changes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  padding: 0 3rem 3rem;
+}
+.changes-col { display: flex; flex-direction: column; }
+.changes-col-head {
+  font: 700 0.68rem/1 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0 0 0.75rem 0;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.changes-col-head.positive { color: #1a9e5c; }
+.changes-col-head.negative { color: var(--blue); }
+.change-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 0.875rem 1rem;
+  border-radius: 3px;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid transparent;
+}
+.change-item.positive { background: #edfaf3; border-left-color: #1a9e5c; }
+.change-item.negative { background: var(--blue-light); border-left-color: var(--blue); }
+.change-icon { font-size: 1rem; flex-shrink: 0; line-height: 1.4; }
+.change-body { flex: 1; }
+.change-title {
+  font: 600 0.82rem/1.35 'Inter', sans-serif;
+  color: var(--text);
+  margin: 0 0 0.2rem;
+}
+.change-sub {
+  font: 400 0.76rem/1.4 'Inter', sans-serif;
+  color: var(--text-2);
+  margin: 0;
+}
+.change-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.45rem;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-left: 0.35rem;
+}
+.change-badge.up { background: #1a9e5c; color: #fff; }
+.change-badge.down { background: var(--blue); color: #fff; }
+
 /* ── RESPONSIVE ───────────────────────────────── */
 @media (max-width: 900px) {
   .header-top { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -862,32 +917,32 @@ footer {
     <div class="header-right">
       <p class="report-label">Internal Intelligence Report</p>
       <p class="report-title">Kworb Weekly<br>Chart Monitor</p>
-      <p class="report-week">Week of 10 May 2026 &nbsp;·&nbsp; Spotify Global Weekly</p>
+      <p class="report-week">Week of 27 May 2026 &nbsp;·&nbsp; Spotify Global Weekly</p>
     </div>
   </div>
   <div class="header-ticker">
     <span class="ticker-label">Now Charting</span>
     <div class="ticker-items" aria-hidden="true">
-      <span class="ticker-item">Shape of You <span>Ed Sheeran · 10 territories</span></span>
-      <span class="ticker-item">Memories <span>David Guetta · 9 territories</span></span>
-      <span class="ticker-item">Titanium <span>David Guetta · 5 territories</span></span>
-      <span class="ticker-item">Photograph <span>Ed Sheeran · 4 territories</span></span>
+      <span class="ticker-item">Shape of You <span>Ed Sheeran · 8 territories</span></span>
+      <span class="ticker-item">Memories <span>David Guetta · 7 territories</span></span>
       <span class="ticker-item">Perfect <span>Ed Sheeran · 4 territories</span></span>
+      <span class="ticker-item">Titanium <span>David Guetta · 3 territories</span></span>
       <span class="ticker-item">Rather Be <span>Clean Bandit · 3 territories</span></span>
-      <span class="ticker-item">Rockabye <span>Clean Bandit · NEW ENTRY</span></span>
-      <span class="ticker-item">Gone Gone Gone <span>David Guetta · 2 territories</span></span>
-      <span class="ticker-item">Victory Lap <span>David Guetta · 2 territories</span></span>
+      <span class="ticker-item">Photograph <span>Ed Sheeran · 3 territories</span></span>
+      <span class="ticker-item">Versace on the Floor <span>David Guetta · 2 territories</span></span>
+      <span class="ticker-item">Rockabye <span>Clean Bandit · Switzerland</span></span>
       <span class="ticker-item">Candy <span>Paolo Nutini · Ireland</span></span>
-      <span class="ticker-item">Shape of You <span>Ed Sheeran · 10 territories</span></span>
-      <span class="ticker-item">Memories <span>David Guetta · 9 territories</span></span>
-      <span class="ticker-item">Titanium <span>David Guetta · 5 territories</span></span>
-      <span class="ticker-item">Photograph <span>Ed Sheeran · 4 territories</span></span>
+      <span class="ticker-item">Beautiful People <span>Ed Sheeran · Malta</span></span>
+      <span class="ticker-item">Shape of You <span>Ed Sheeran · 8 territories</span></span>
+      <span class="ticker-item">Memories <span>David Guetta · 7 territories</span></span>
       <span class="ticker-item">Perfect <span>Ed Sheeran · 4 territories</span></span>
+      <span class="ticker-item">Titanium <span>David Guetta · 3 territories</span></span>
       <span class="ticker-item">Rather Be <span>Clean Bandit · 3 territories</span></span>
-      <span class="ticker-item">Rockabye <span>Clean Bandit · NEW ENTRY</span></span>
-      <span class="ticker-item">Gone Gone Gone <span>David Guetta · 2 territories</span></span>
-      <span class="ticker-item">Victory Lap <span>David Guetta · 2 territories</span></span>
+      <span class="ticker-item">Photograph <span>Ed Sheeran · 3 territories</span></span>
+      <span class="ticker-item">Versace on the Floor <span>David Guetta · 2 territories</span></span>
+      <span class="ticker-item">Rockabye <span>Clean Bandit · Switzerland</span></span>
       <span class="ticker-item">Candy <span>Paolo Nutini · Ireland</span></span>
+      <span class="ticker-item">Beautiful People <span>Ed Sheeran · Malta</span></span>
     </div>
   </div>
 </header>
@@ -897,10 +952,80 @@ footer {
 <!-- STATS BAR -->
 <section class="stats-bar">
   <div class="stat-cell"><span class="stat-num">74</span><span class="stat-label">Territories Scanned</span></div>
-  <div class="stat-cell"><span class="stat-num stat-num--blue">28</span><span class="stat-label">Territories with Matches</span></div>
-  <div class="stat-cell"><span class="stat-num stat-num--blue">18</span><span class="stat-label">Unique Songs Charting</span></div>
-  <div class="stat-cell"><span class="stat-num stat-num--blue">75</span><span class="stat-label">Total Roster Matches</span></div>
-  <div class="stat-cell"><span class="stat-num">9</span><span class="stat-label">Roster Artists Active</span></div>
+  <div class="stat-cell"><span class="stat-num stat-num--blue">21</span><span class="stat-label">Territories with Matches</span></div>
+  <div class="stat-cell"><span class="stat-num stat-num--blue">13</span><span class="stat-label">Unique Songs Charting</span></div>
+  <div class="stat-cell"><span class="stat-num stat-num--blue">36</span><span class="stat-label">Total Roster Matches</span></div>
+  <div class="stat-cell"><span class="stat-num">6</span><span class="stat-label">Roster Artists Active</span></div>
+</section>
+
+<!-- NOTABLE CHANGES -->
+<section class="changes-section">
+  <div class="sec-head">
+    <h2 class="sec-title">Notable Week on Week Changes</h2>
+    <div class="sec-rule"></div>
+    <span class="sec-count">w/c 27 May 2026 vs w/c 16 May 2026</span>
+  </div>
+  <div class="changes-grid">
+
+    <div class="changes-col">
+      <p class="changes-col-head positive">▲ Positive Movements</p>
+
+      <div class="change-item positive">
+        <span class="change-icon">🇯🇵</span>
+        <div class="change-body">
+          <p class="change-title">Shape of You — Japan <span class="change-badge up">▲ +13</span></p>
+          <p class="change-sub">Climbs from #88 to #75 — strongest mover of the week</p>
+        </div>
+      </div>
+
+      <div class="change-item positive">
+        <span class="change-icon">🇰🇷</span>
+        <div class="change-body">
+          <p class="change-title">Shape of You — South Korea <span class="change-badge up">▲ +6</span></p>
+          <p class="change-sub">Moves up from #124 to #118</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="changes-col">
+      <p class="changes-col-head negative">▼ Negative Movements</p>
+
+      <div class="change-item negative">
+        <span class="change-icon">📉</span>
+        <div class="change-body">
+          <p class="change-title">5 songs left the chart <span class="change-badge down">−5 tracks</span></p>
+          <p class="change-sub">Gone Gone Gone · Victory Lap · Symphony · I'm Good (Blue) · Ranjha</p>
+        </div>
+      </div>
+
+      <div class="change-item negative">
+        <span class="change-icon">🌍</span>
+        <div class="change-body">
+          <p class="change-title">6 markets fell silent <span class="change-badge down">28 → 21</span></p>
+          <p class="change-sub">Australia · France · India · Lithuania · Norway · Saudi Arabia</p>
+        </div>
+      </div>
+
+      <div class="change-item negative">
+        <span class="change-icon">📊</span>
+        <div class="change-body">
+          <p class="change-title">Memories drops territory count <span class="change-badge down">9 → 7</span></p>
+          <p class="change-sub">Belgium and Lithuania drop off; all other markets hold</p>
+        </div>
+      </div>
+
+      <div class="change-item negative">
+        <span class="change-icon">📊</span>
+        <div class="change-body">
+          <p class="change-title">Titanium loses two markets <span class="change-badge down">5 → 3</span></p>
+          <p class="change-sub">Germany (#161) and Austria (#199) both exit the chart</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
 <!-- WORLD MAP -->
@@ -908,7 +1033,7 @@ footer {
   <div class="sec-head">
     <h2 class="sec-title">Territory Map</h2>
     <div class="sec-rule"></div>
-    <span class="sec-count">28 Markets Active · Click a Country to Explore</span>
+    <span class="sec-count">21 Markets Active · Click a Country to Explore</span>
   </div>
   <div class="map-wrap">
     <div class="map-svg-container">
@@ -944,7 +1069,7 @@ footer {
   <div class="sec-head">
     <h2 class="sec-title">Charting Now</h2>
     <div class="sec-rule"></div>
-    <span class="sec-count">18 Songs · Sorted by Territory Reach</span>
+    <span class="sec-count">13 Songs · Sorted by Territory Reach</span>
   </div>
   <p class="chart-hint">Click any song to see which territories it is currently charting in</p>
 
@@ -953,108 +1078,78 @@ footer {
     <div class="chart-row" data-song="shape-of-you" tabindex="0" role="button" aria-expanded="false">
       <span class="chart-row-idx">1</span>
       <div><p class="chart-row-title">Shape of You</p><p class="chart-row-artist">Ed Sheeran</p></div>
-      <div class="chart-row-terr"><span class="terr-num">10</span><span class="terr-lbl">Territories</span></div>
+      <div class="chart-row-terr"><span class="terr-num">8</span><span class="terr-lbl">Territories</span></div>
     </div>
 
     <div class="chart-row" data-song="memories" tabindex="0" role="button" aria-expanded="false">
       <span class="chart-row-idx">2</span>
       <div><p class="chart-row-title">Memories</p><p class="chart-row-artist">David Guetta</p></div>
-      <div class="chart-row-terr"><span class="terr-num">9</span><span class="terr-lbl">Territories</span></div>
-    </div>
-
-    <div class="chart-row" data-song="titanium" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">3</span>
-      <div><p class="chart-row-title">Titanium</p><p class="chart-row-artist">David Guetta</p></div>
-      <div class="chart-row-terr"><span class="terr-num">5</span><span class="terr-lbl">Territories</span></div>
-    </div>
-
-    <div class="chart-row" data-song="photograph" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">4</span>
-      <div><p class="chart-row-title">Photograph</p><p class="chart-row-artist">Ed Sheeran</p></div>
-      <div class="chart-row-terr"><span class="terr-num">4</span><span class="terr-lbl">Territories</span></div>
+      <div class="chart-row-terr"><span class="terr-num">7</span><span class="terr-lbl">Territories</span></div>
     </div>
 
     <div class="chart-row" data-song="perfect" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">5</span>
+      <span class="chart-row-idx">3</span>
       <div><p class="chart-row-title">Perfect</p><p class="chart-row-artist">Ed Sheeran</p></div>
       <div class="chart-row-terr"><span class="terr-num">4</span><span class="terr-lbl">Territories</span></div>
     </div>
 
+    <div class="chart-row" data-song="titanium" tabindex="0" role="button" aria-expanded="false">
+      <span class="chart-row-idx">4</span>
+      <div><p class="chart-row-title">Titanium</p><p class="chart-row-artist">David Guetta</p></div>
+      <div class="chart-row-terr"><span class="terr-num">3</span><span class="terr-lbl">Territories</span></div>
+    </div>
+
     <div class="chart-row" data-song="rather-be" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">6</span>
+      <span class="chart-row-idx">5</span>
       <div><p class="chart-row-title">Rather Be</p><p class="chart-row-artist">Clean Bandit</p></div>
       <div class="chart-row-terr"><span class="terr-num">3</span><span class="terr-lbl">Territories</span></div>
     </div>
 
-    <div class="chart-row" data-song="gone-gone-gone" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">7</span>
-      <div><p class="chart-row-title">Gone Gone Gone</p><p class="chart-row-artist">David Guetta feat. Teddy Swims &amp; Tones And I</p></div>
-      <div class="chart-row-terr"><span class="terr-num">2</span><span class="terr-lbl">Territories</span></div>
-    </div>
-
-    <div class="chart-row" data-song="victory-lap" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">8</span>
-      <div><p class="chart-row-title">Victory Lap</p><p class="chart-row-artist">David Guetta feat. Skepta &amp; PlaqueBoyMax</p></div>
-      <div class="chart-row-terr"><span class="terr-num">2</span><span class="terr-lbl">Territories</span></div>
-    </div>
-
-    <div class="chart-row" data-song="rockabye" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">9</span>
-      <div><p class="chart-row-title">Rockabye</p><p class="chart-row-artist">Clean Bandit feat. Sean Paul &amp; Anne-Marie</p></div>
-      <div class="chart-row-terr"><span class="terr-num">2</span><span class="terr-lbl">Territories</span></div>
+    <div class="chart-row" data-song="photograph" tabindex="0" role="button" aria-expanded="false">
+      <span class="chart-row-idx">6</span>
+      <div><p class="chart-row-title">Photograph</p><p class="chart-row-artist">Ed Sheeran</p></div>
+      <div class="chart-row-terr"><span class="terr-num">3</span><span class="terr-lbl">Territories</span></div>
     </div>
 
     <div class="chart-row" data-song="versace" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">10</span>
+      <span class="chart-row-idx">7</span>
       <div><p class="chart-row-title">Versace on the Floor</p><p class="chart-row-artist">David Guetta feat. Bruno Mars</p></div>
       <div class="chart-row-terr"><span class="terr-num">2</span><span class="terr-lbl">Territories</span></div>
     </div>
 
-    <div class="chart-row" data-song="i-dont-care" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">11</span>
-      <div><p class="chart-row-title">I Don't Care</p><p class="chart-row-artist">Ed Sheeran &amp; Justin Bieber</p></div>
+    <div class="chart-row" data-song="rockabye" tabindex="0" role="button" aria-expanded="false">
+      <span class="chart-row-idx">8</span>
+      <div><p class="chart-row-title">Rockabye</p><p class="chart-row-artist">Clean Bandit feat. Sean Paul &amp; Anne-Marie</p></div>
       <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
     </div>
 
     <div class="chart-row" data-song="beautiful-people" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">12</span>
+      <span class="chart-row-idx">9</span>
       <div><p class="chart-row-title">Beautiful People</p><p class="chart-row-artist">Ed Sheeran feat. Khalid</p></div>
       <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
     </div>
 
-    <div class="chart-row" data-song="2002" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">13</span>
-      <div><p class="chart-row-title">2002</p><p class="chart-row-artist">Anne-Marie</p></div>
+    <div class="chart-row" data-song="i-dont-care" tabindex="0" role="button" aria-expanded="false">
+      <span class="chart-row-idx">10</span>
+      <div><p class="chart-row-title">I Don't Care</p><p class="chart-row-artist">Ed Sheeran &amp; Justin Bieber</p></div>
       <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
     </div>
 
     <div class="chart-row" data-song="lonely" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">14</span>
+      <span class="chart-row-idx">11</span>
       <div><p class="chart-row-title">Lonely</p><p class="chart-row-artist">Joel Corry feat. RAYE</p></div>
       <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
     </div>
 
-    <div class="chart-row" data-song="symphony" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">15</span>
-      <div><p class="chart-row-title">Symphony</p><p class="chart-row-artist">Clean Bandit feat. Zara Larsson</p></div>
+    <div class="chart-row" data-song="2002" tabindex="0" role="button" aria-expanded="false">
+      <span class="chart-row-idx">12</span>
+      <div><p class="chart-row-title">2002</p><p class="chart-row-artist">Anne-Marie</p></div>
       <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
     </div>
 
     <div class="chart-row" data-song="candy" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">16</span>
+      <span class="chart-row-idx">13</span>
       <div><p class="chart-row-title">Candy</p><p class="chart-row-artist">Paolo Nutini</p></div>
-      <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
-    </div>
-
-    <div class="chart-row" data-song="im-good" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">17</span>
-      <div><p class="chart-row-title">I'm Good (Blue)</p><p class="chart-row-artist">David Guetta &amp; Bebe Rexha</p></div>
-      <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
-    </div>
-
-    <div class="chart-row" data-song="ranjha" tabindex="0" role="button" aria-expanded="false">
-      <span class="chart-row-idx">18</span>
-      <div><p class="chart-row-title">Ranjha</p><p class="chart-row-artist">David Guetta feat. Diljit Dosanjh &amp; Sia</p></div>
       <div class="chart-row-terr"><span class="terr-num">1</span><span class="terr-lbl">Territory</span></div>
     </div>
 
@@ -1068,7 +1163,7 @@ footer {
   <div class="sec-head">
     <h2 class="sec-title">Artist Performance</h2>
     <div class="sec-rule"></div>
-    <span class="sec-count">9 Artists Active This Week</span>
+    <span class="sec-count">6 Artists Active This Week</span>
   </div>
   <div class="artists-grid">
 
@@ -1189,7 +1284,7 @@ footer {
   <div class="sec-head">
     <h2 class="sec-title">Territory Breakdown</h2>
     <div class="sec-rule"></div>
-    <span class="sec-count">28 Territories · Sorted by Match Count</span>
+    <span class="sec-count">21 Territories · Sorted by Match Count</span>
   </div>
   <div class="territory-blocks">
 
@@ -1432,110 +1527,79 @@ const SONG_DATA = {
     title: 'Shape of You',
     artist: 'Ed Sheeran',
     territories: [
-      { flag: '🇯🇵', name: 'Japan',        code: 'JP',      rank: 88  },
-      { flag: '🌍',  name: 'Global',       code: 'GLOBAL',  rank: 93  },
-      { flag: '🇨🇭', name: 'Switzerland',  code: 'CH',      rank: 107 },
-      { flag: '🇰🇷', name: 'South Korea',  code: 'KR',      rank: 124 },
-      { flag: '🇦🇪', name: 'UAE',          code: 'AE',      rank: 128 },
-      { flag: '🇧🇪', name: 'Belgium',      code: 'BE',      rank: 146 },
-      { flag: '🇸🇬', name: 'Singapore',    code: 'SG',      rank: 167 },
-      { flag: '🇰🇿', name: 'Kazakhstan',   code: 'KZ',      rank: 167 },
-      { flag: '🇸🇦', name: 'Saudi Arabia', code: 'SA',      rank: 176 },
-      { flag: '🇲🇹', name: 'Malta',        code: 'MT',      rank: 191 },
+      { flag: '🇯🇵', name: 'Japan',        code: 'JP',     rank: 75  },
+      { flag: '🌍',  name: 'Global',       code: 'GLOBAL', rank: 116 },
+      { flag: '🇰🇷', name: 'South Korea',  code: 'KR',     rank: 118 },
+      { flag: '🇨🇭', name: 'Switzerland',  code: 'CH',     rank: 149 },
+      { flag: '🇦🇪', name: 'UAE',          code: 'AE',     rank: 166 },
+      { flag: '🇧🇪', name: 'Belgium',      code: 'BE',     rank: 192 },
+      { flag: '🇰🇿', name: 'Kazakhstan',   code: 'KZ',     rank: 181 },
+      { flag: '🇲🇹', name: 'Malta',        code: 'MT',     rank: 191 },
     ]
   },
   'memories': {
     title: 'Memories',
     artist: 'David Guetta',
     territories: [
-      { flag: '🇩🇪', name: 'Germany',        code: 'DE', rank: 89  },
-      { flag: '🇨🇭', name: 'Switzerland',    code: 'CH', rank: 92  },
-      { flag: '🇱🇻', name: 'Latvia',         code: 'LV', rank: 100 },
-      { flag: '🇸🇰', name: 'Slovakia',       code: 'SK', rank: 105 },
-      { flag: '🇦🇹', name: 'Austria',        code: 'AT', rank: 117 },
-      { flag: '🇪🇪', name: 'Estonia',        code: 'EE', rank: 134 },
-      { flag: '🇱🇹', name: 'Lithuania',      code: 'LT', rank: 150 },
-      { flag: '🇧🇪', name: 'Belgium',        code: 'BE', rank: 162 },
-      { flag: '🇨🇿', name: 'Czech Republic', code: 'CZ', rank: 169 },
-    ]
-  },
-  'titanium': {
-    title: 'Titanium',
-    artist: 'David Guetta',
-    territories: [
-      { flag: '🇨🇭', name: 'Switzerland', code: 'CH', rank: 90  },
-      { flag: '🇧🇪', name: 'Belgium',     code: 'BE', rank: 102 },
-      { flag: '🇩🇪', name: 'Germany',     code: 'DE', rank: 161 },
-      { flag: '🇱🇺', name: 'Luxembourg',  code: 'LU', rank: 169 },
-      { flag: '🇦🇹', name: 'Austria',     code: 'AT', rank: 199 },
-    ]
-  },
-  'photograph': {
-    title: 'Photograph',
-    artist: 'Ed Sheeran',
-    territories: [
-      { flag: '🇸🇬', name: 'Singapore',   code: 'SG', rank: 118 },
-      { flag: '🇮🇩', name: 'Indonesia',   code: 'ID', rank: 155 },
-      { flag: '🇲🇾', name: 'Malaysia',    code: 'MY', rank: 140 },
-      { flag: '🇵🇭', name: 'Philippines', code: 'PH', rank: 199 },
+      { flag: '🇱🇻', name: 'Latvia',         code: 'LV', rank: 124 },
+      { flag: '🇨🇭', name: 'Switzerland',    code: 'CH', rank: 133 },
+      { flag: '🇸🇰', name: 'Slovakia',       code: 'SK', rank: 148 },
+      { flag: '🇩🇪', name: 'Germany',        code: 'DE', rank: 153 },
+      { flag: '🇪🇪', name: 'Estonia',        code: 'EE', rank: 178 },
+      { flag: '🇦🇹', name: 'Austria',        code: 'AT', rank: 184 },
+      { flag: '🇨🇿', name: 'Czech Republic', code: 'CZ', rank: 197 },
     ]
   },
   'perfect': {
     title: 'Perfect',
     artist: 'Ed Sheeran',
     territories: [
-      { flag: '🌍',  name: 'Global',    code: 'GLOBAL', rank: 172 },
-      { flag: '🇲🇾', name: 'Malaysia',  code: 'MY',     rank: 131 },
-      { flag: '🇸🇬', name: 'Singapore', code: 'SG',     rank: 142 },
+      { flag: '🇲🇾', name: 'Malaysia',  code: 'MY',     rank: 132 },
+      { flag: '🇸🇬', name: 'Singapore', code: 'SG',     rank: 152 },
+      { flag: '🌍',  name: 'Global',    code: 'GLOBAL', rank: 185 },
       { flag: '🇲🇹', name: 'Malta',     code: 'MT',     rank: 176 },
+    ]
+  },
+  'titanium': {
+    title: 'Titanium',
+    artist: 'David Guetta',
+    territories: [
+      { flag: '🇨🇭', name: 'Switzerland', code: 'CH', rank: 99  },
+      { flag: '🇧🇪', name: 'Belgium',     code: 'BE', rank: 112 },
+      { flag: '🇱🇺', name: 'Luxembourg',  code: 'LU', rank: 190 },
     ]
   },
   'rather-be': {
     title: 'Rather Be',
     artist: 'Clean Bandit',
     territories: [
-      { flag: '🇧🇪', name: 'Belgium',     code: 'BE', rank: 139 },
-      { flag: '🇳🇱', name: 'Netherlands', code: 'NL', rank: 159 },
-      { flag: '🇳🇿', name: 'New Zealand', code: 'NZ', rank: 191 },
+      { flag: '🇧🇪', name: 'Belgium',     code: 'BE', rank: 149 },
+      { flag: '🇳🇱', name: 'Netherlands', code: 'NL', rank: 188 },
+      { flag: '🇳🇿', name: 'New Zealand', code: 'NZ', rank: 192 },
     ]
   },
-  'gone-gone-gone': {
-    title: 'Gone Gone Gone',
-    artist: 'David Guetta feat. Teddy Swims & Tones And I',
+  'photograph': {
+    title: 'Photograph',
+    artist: 'Ed Sheeran',
     territories: [
-      { flag: '🇳🇱', name: 'Netherlands', code: 'NL', rank: 157 },
-      { flag: '🇫🇷', name: 'France',      code: 'FR', rank: 177 },
-    ]
-  },
-  'victory-lap': {
-    title: 'Victory Lap',
-    artist: 'David Guetta feat. Skepta & PlaqueBoyMax',
-    territories: [
-      { flag: '🇦🇺', name: 'Australia',   code: 'AU', rank: 163 },
-      { flag: '🇳🇿', name: 'New Zealand', code: 'NZ', rank: 197 },
-    ]
-  },
-  'rockabye': {
-    title: 'Rockabye',
-    artist: 'Clean Bandit feat. Sean Paul & Anne-Marie',
-    territories: [
-      { flag: '🇨🇭', name: 'Switzerland', code: 'CH', rank: 156 },
-      { flag: '🇦🇹', name: 'Austria',     code: 'AT', rank: 187 },
+      { flag: '🇸🇬', name: 'Singapore', code: 'SG', rank: 132 },
+      { flag: '🇲🇾', name: 'Malaysia',  code: 'MY', rank: 147 },
+      { flag: '🇮🇩', name: 'Indonesia', code: 'ID', rank: 153 },
     ]
   },
   'versace': {
     title: 'Versace on the Floor',
     artist: 'David Guetta feat. Bruno Mars',
     territories: [
-      { flag: '🇵🇭', name: 'Philippines', code: 'PH', rank: 154 },
-      { flag: '🇲🇾', name: 'Malaysia',    code: 'MY', rank: 148 },
+      { flag: '🇵🇭', name: 'Philippines', code: 'PH', rank: 171 },
+      { flag: '🇲🇾', name: 'Malaysia',    code: 'MY', rank: 182 },
     ]
   },
-  'i-dont-care': {
-    title: "I Don't Care",
-    artist: 'Ed Sheeran & Justin Bieber',
+  'rockabye': {
+    title: 'Rockabye',
+    artist: 'Clean Bandit feat. Sean Paul & Anne-Marie',
     territories: [
-      { flag: '🇲🇹', name: 'Malta', code: 'MT', rank: 58 },
+      { flag: '🇨🇭', name: 'Switzerland', code: 'CH', rank: 181 },
     ]
   },
   'beautiful-people': {
@@ -1545,11 +1609,11 @@ const SONG_DATA = {
       { flag: '🇲🇹', name: 'Malta', code: 'MT', rank: 52 },
     ]
   },
-  '2002': {
-    title: '2002',
-    artist: 'Anne-Marie',
+  'i-dont-care': {
+    title: "I Don't Care",
+    artist: 'Ed Sheeran & Justin Bieber',
     territories: [
-      { flag: '🇲🇹', name: 'Malta', code: 'MT', rank: 173 },
+      { flag: '🇲🇹', name: 'Malta', code: 'MT', rank: 58 },
     ]
   },
   'lonely': {
@@ -1559,32 +1623,18 @@ const SONG_DATA = {
       { flag: '🇲🇹', name: 'Malta', code: 'MT', rank: 104 },
     ]
   },
-  'symphony': {
-    title: 'Symphony',
-    artist: 'Clean Bandit feat. Zara Larsson',
+  '2002': {
+    title: '2002',
+    artist: 'Anne-Marie',
     territories: [
-      { flag: '🇳🇴', name: 'Norway', code: 'NO', rank: 186 },
+      { flag: '🇲🇹', name: 'Malta', code: 'MT', rank: 173 },
     ]
   },
   'candy': {
     title: 'Candy',
     artist: 'Paolo Nutini',
     territories: [
-      { flag: '🇮🇪', name: 'Ireland', code: 'IE', rank: 120 },
-    ]
-  },
-  'im-good': {
-    title: "I'm Good (Blue)",
-    artist: 'David Guetta & Bebe Rexha',
-    territories: [
-      { flag: '🇨🇭', name: 'Switzerland', code: 'CH', rank: 151 },
-    ]
-  },
-  'ranjha': {
-    title: 'Ranjha',
-    artist: 'David Guetta feat. Diljit Dosanjh & Sia',
-    territories: [
-      { flag: '🇮🇳', name: 'India', code: 'IN', rank: 193 },
+      { flag: '🇮🇪', name: 'Ireland', code: 'IE', rank: 135 },
     ]
   },
 };
@@ -1658,108 +1708,80 @@ const SONG_DATA = {
 (function () {
   const CHARTING = {
     AE: { name: 'UAE', flag: '🇦🇪', songs: [
-      { rank: 128, title: 'Shape of You', artist: 'Ed Sheeran' }
+      { rank: 166, title: 'Shape of You', artist: 'Ed Sheeran' }
     ]},
     AT: { name: 'Austria', flag: '🇦🇹', songs: [
-      { rank: 117, title: 'Memories', artist: 'David Guetta' },
-      { rank: 187, title: 'Rockabye', artist: 'Clean Bandit feat. Sean Paul & Anne-Marie' },
-      { rank: 199, title: 'Titanium', artist: 'David Guetta' }
-    ]},
-    AU: { name: 'Australia', flag: '🇦🇺', songs: [
-      { rank: 163, title: 'Victory Lap', artist: 'Fred again.. feat. Skepta & PlaqueBoyMax' }
+      { rank: 184, title: 'Memories', artist: 'David Guetta' }
     ]},
     BE: { name: 'Belgium', flag: '🇧🇪', songs: [
-      { rank: 102, title: 'Titanium', artist: 'David Guetta' },
-      { rank: 139, title: 'Rather Be', artist: 'Clean Bandit' },
-      { rank: 146, title: 'Shape of You', artist: 'Ed Sheeran' },
-      { rank: 162, title: 'Memories', artist: 'David Guetta' }
+      { rank: 112, title: 'Titanium', artist: 'David Guetta' },
+      { rank: 149, title: 'Rather Be', artist: 'Clean Bandit' },
+      { rank: 192, title: 'Shape of You', artist: 'Ed Sheeran' }
     ]},
     CH: { name: 'Switzerland', flag: '🇨🇭', songs: [
-      { rank: 90, title: 'Titanium', artist: 'David Guetta' },
-      { rank: 92, title: 'Memories', artist: 'David Guetta' },
-      { rank: 107, title: 'Shape of You', artist: 'Ed Sheeran' },
-      { rank: 151, title: "I'm Good (Blue)", artist: 'David Guetta & Bebe Rexha' },
-      { rank: 156, title: 'Rockabye', artist: 'Clean Bandit feat. Sean Paul & Anne-Marie' }
+      { rank: 99,  title: 'Titanium', artist: 'David Guetta' },
+      { rank: 133, title: 'Memories', artist: 'David Guetta' },
+      { rank: 149, title: 'Shape of You', artist: 'Ed Sheeran' },
+      { rank: 181, title: 'Rockabye', artist: 'Clean Bandit feat. Sean Paul & Anne-Marie' }
     ]},
     CZ: { name: 'Czech Republic', flag: '🇨🇿', songs: [
-      { rank: 169, title: 'Memories', artist: 'David Guetta' }
+      { rank: 197, title: 'Memories', artist: 'David Guetta' }
     ]},
     DE: { name: 'Germany', flag: '🇩🇪', songs: [
-      { rank: 89, title: 'Memories', artist: 'David Guetta' },
-      { rank: 161, title: 'Titanium', artist: 'David Guetta' }
+      { rank: 153, title: 'Memories', artist: 'David Guetta' }
     ]},
     EE: { name: 'Estonia', flag: '🇪🇪', songs: [
-      { rank: 134, title: 'Memories', artist: 'David Guetta' }
-    ]},
-    FR: { name: 'France', flag: '🇫🇷', songs: [
-      { rank: 177, title: 'Gone Gone Gone', artist: 'David Guetta feat. Teddy Swims & Tones And I' }
+      { rank: 178, title: 'Memories', artist: 'David Guetta' }
     ]},
     ID: { name: 'Indonesia', flag: '🇮🇩', songs: [
-      { rank: 155, title: 'Photograph', artist: 'Ed Sheeran' }
+      { rank: 153, title: 'Photograph', artist: 'Ed Sheeran' }
     ]},
     IE: { name: 'Ireland', flag: '🇮🇪', songs: [
-      { rank: 120, title: 'Candy', artist: 'Paolo Nutini' }
-    ]},
-    IN: { name: 'India', flag: '🇮🇳', songs: [
-      { rank: 193, title: 'Ranjha', artist: 'David Guetta feat. Diljit Dosanjh & Sia' }
+      { rank: 135, title: 'Candy', artist: 'Paolo Nutini' }
     ]},
     JP: { name: 'Japan', flag: '🇯🇵', songs: [
-      { rank: 88, title: 'Shape of You', artist: 'Ed Sheeran' }
+      { rank: 75, title: 'Shape of You', artist: 'Ed Sheeran' }
     ]},
     KR: { name: 'South Korea', flag: '🇰🇷', songs: [
-      { rank: 124, title: 'Shape of You', artist: 'Ed Sheeran' }
+      { rank: 118, title: 'Shape of You', artist: 'Ed Sheeran' }
     ]},
     KZ: { name: 'Kazakhstan', flag: '🇰🇿', songs: [
-      { rank: 167, title: 'Shape of You', artist: 'Ed Sheeran' }
-    ]},
-    LT: { name: 'Lithuania', flag: '🇱🇹', songs: [
-      { rank: 150, title: 'Memories', artist: 'David Guetta' }
+      { rank: 181, title: 'Shape of You', artist: 'Ed Sheeran' }
     ]},
     LU: { name: 'Luxembourg', flag: '🇱🇺', songs: [
-      { rank: 169, title: 'Titanium', artist: 'David Guetta' },
-      { rank: 171, title: 'Memories', artist: 'David Guetta' }
+      { rank: 190, title: 'Titanium', artist: 'David Guetta' }
     ]},
     LV: { name: 'Latvia', flag: '🇱🇻', songs: [
-      { rank: 100, title: 'Memories', artist: 'David Guetta' }
+      { rank: 124, title: 'Memories', artist: 'David Guetta' }
     ]},
     MT: { name: 'Malta', flag: '🇲🇹', songs: [
-      { rank: 52, title: 'Beautiful People', artist: 'Ed Sheeran' },
-      { rank: 58, title: "I Don't Care", artist: 'Ed Sheeran & Justin Bieber' },
+      { rank: 52,  title: 'Beautiful People', artist: 'Ed Sheeran' },
+      { rank: 58,  title: "I Don't Care", artist: 'Ed Sheeran & Justin Bieber' },
       { rank: 104, title: 'Lonely', artist: 'Joel Corry' },
       { rank: 173, title: '2002', artist: 'Anne-Marie' },
       { rank: 176, title: 'Perfect', artist: 'Ed Sheeran' },
       { rank: 191, title: 'Shape of You', artist: 'Ed Sheeran' }
     ]},
     MY: { name: 'Malaysia', flag: '🇲🇾', songs: [
-      { rank: 131, title: 'Perfect', artist: 'Ed Sheeran' },
-      { rank: 140, title: 'Photograph', artist: 'Ed Sheeran' },
-      { rank: 148, title: 'Versace on the Floor', artist: 'David Guetta feat. Bruno Mars' }
+      { rank: 132, title: 'Perfect', artist: 'Ed Sheeran' },
+      { rank: 147, title: 'Photograph', artist: 'Ed Sheeran' },
+      { rank: 182, title: 'Versace on the Floor', artist: 'David Guetta feat. Bruno Mars' }
     ]},
     NL: { name: 'Netherlands', flag: '🇳🇱', songs: [
-      { rank: 157, title: 'Gone Gone Gone', artist: 'David Guetta feat. Teddy Swims & Tones And I' },
-      { rank: 159, title: 'Rather Be', artist: 'Clean Bandit' }
-    ]},
-    NO: { name: 'Norway', flag: '🇳🇴', songs: [
-      { rank: 186, title: 'Symphony', artist: 'Clean Bandit' }
+      { rank: 188, title: 'Rather Be', artist: 'Clean Bandit' }
     ]},
     NZ: { name: 'New Zealand', flag: '🇳🇿', songs: [
-      { rank: 191, title: 'Rather Be', artist: 'Clean Bandit' },
-      { rank: 197, title: 'Victory Lap', artist: 'Fred again.. feat. Skepta & PlaqueBoyMax' }
+      { rank: 192, title: 'Rather Be', artist: 'Clean Bandit' }
     ]},
     PH: { name: 'Philippines', flag: '🇵🇭', songs: [
-      { rank: 154, title: 'Versace on the Floor', artist: 'David Guetta feat. Bruno Mars' },
-      { rank: 199, title: 'Photograph', artist: 'Ed Sheeran' }
-    ]},
-    SA: { name: 'Saudi Arabia', flag: '🇸🇦', songs: [
-      { rank: 176, title: 'Shape of You', artist: 'Ed Sheeran' }
+      { rank: 171, title: 'Versace on the Floor', artist: 'David Guetta feat. Bruno Mars' }
     ]},
     SG: { name: 'Singapore', flag: '🇸🇬', songs: [
-      { rank: 118, title: 'Photograph', artist: 'Ed Sheeran' },
-      { rank: 142, title: 'Perfect', artist: 'Ed Sheeran' },
-      { rank: 167, title: 'Shape of You', artist: 'Ed Sheeran' }
+      { rank: 132, title: 'Photograph', artist: 'Ed Sheeran' },
+      { rank: 152, title: 'Perfect', artist: 'Ed Sheeran' }
     ]},
     SK: { name: 'Slovakia', flag: '🇸🇰', songs: [
-      { rank: 105, title: 'Memories', artist: 'David Guetta' }
+      { rank: 148, title: 'Memories', artist: 'David Guetta' }
     ]}
   };
 
