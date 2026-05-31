@@ -882,6 +882,209 @@ footer {
 .change-badge.up { background: #1a9e5c; color: #fff; }
 .change-badge.down { background: var(--blue); color: #fff; }
 
+/* ── SOCIAL LISTENING PULSE ──────────────────────── */
+.sl-section { border-bottom: 1px solid var(--border); }
+
+.sl-grid { border-top: 1px solid var(--border); }
+
+.sl-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto auto;
+  gap: 1rem 1.5rem;
+  align-items: center;
+  padding: 1.25rem 3rem;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  transition: background 0.12s;
+  position: relative;
+  user-select: none;
+}
+.sl-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: transparent;
+  transition: background 0.15s;
+}
+.sl-row::after {
+  content: '›';
+  font-size: 1.2rem;
+  color: var(--muted);
+  line-height: 1;
+  transition: transform 0.22s ease, color 0.15s;
+}
+.sl-row.active::after { transform: rotate(90deg); color: var(--blue); }
+.sl-row:hover { background: var(--surface); }
+.sl-row:hover::before { background: var(--border-mid); }
+.sl-row.active { background: var(--blue-light); }
+.sl-row.active::before { background: var(--blue); }
+
+.sl-artist-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.015em;
+}
+.sl-artist-sub { font-size: 0.7rem; color: var(--muted); margin-top: 0.1rem; }
+.sl-row.active .sl-artist-name { color: var(--blue-text); }
+
+.sl-scores-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.sl-pill {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.55rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+.sl-pill strong { font-size: 0.82rem; font-weight: 700; letter-spacing: 0; }
+.sl-pill--pos   { background: #edfaf3; color: #1a9e5c; }
+.sl-pill--hype  { background: #fff8e8; color: #c97a00; }
+.sl-pill--reach { background: #ffeaed; color: var(--blue-text); }
+.sl-pill--neg   { background: var(--surface-2); color: var(--text-2); }
+.sl-pill--neg.risk { background: #ffeaed; color: var(--blue-text); }
+
+.sl-overall { text-align: right; min-width: 3.5rem; }
+.sl-overall-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.25rem;
+  line-height: 1;
+  display: block;
+}
+.sl-overall-lbl {
+  font-size: 0.55rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.sl-expand {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.42s ease, opacity 0.28s ease;
+  background: var(--ink);
+  border-left: 3px solid var(--blue);
+  border-bottom: 1px solid var(--border);
+}
+.sl-expand.open { max-height: 900px; opacity: 1; }
+
+.sl-expand-inner {
+  padding: 2rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 3rem;
+}
+.sl-detail-col { display: flex; flex-direction: column; gap: 1.75rem; }
+.sl-detail-title {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #444;
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1e1e1e;
+}
+
+.sl-score-table { width: 100%; border-collapse: collapse; }
+.sl-score-table td { padding: 0.55rem 0; vertical-align: middle; }
+.sl-score-table tr:not(:last-child) td { border-bottom: 1px solid #181818; }
+.sl-score-table td:first-child {
+  color: #555;
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  width: 60%;
+}
+.sl-score-table td:last-child {
+  text-align: right;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.score-hi  { color: var(--blue); }
+.score-mid { color: #1a9e5c; }
+.score-lo  { color: #c97a00; }
+.score-dim { color: #555; }
+
+.sl-platform-list { display: flex; flex-direction: column; gap: 0.45rem; }
+.sl-platform-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 0.75rem;
+  background: #111;
+  border: 1px solid #1a1a1a;
+}
+.sl-platform-name { font-size: 0.75rem; font-weight: 500; color: #aaa; }
+.sl-platform-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+}
+.sl-platform-badge.pos { background: #0d3a20; color: #4fd89e; }
+.sl-platform-badge.mix { background: #2a2200; color: #d4960a; }
+.sl-platform-badge.neg { background: #3a0d0d; color: #e05555; }
+
+.sl-format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+.sl-format-cell {
+  background: #161616;
+  border: 1px solid #222;
+  padding: 0.75rem 0.5rem;
+  text-align: center;
+}
+.sl-format-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.75rem;
+  line-height: 1;
+  display: block;
+}
+.sl-format-lbl {
+  font-size: 0.52rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+.sl-insights { display: flex; flex-direction: column; gap: 0.6rem; }
+.sl-insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.76rem;
+  color: #777;
+  line-height: 1.45;
+}
+.sl-insight-item::before {
+  content: '–';
+  color: var(--blue);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+
 /* ── RESPONSIVE ───────────────────────────────── */
 @media (max-width: 900px) {
   .header-top { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
@@ -899,6 +1102,9 @@ footer {
   .track-row { grid-template-columns: 2.5rem 1fr; }
   .track-roster-match, .track-participants { display: none; }
   footer { flex-direction: column; align-items: flex-start; gap: 1.5rem; padding: 2rem 1.5rem; }
+  .sl-row { padding: 1rem 1.5rem; }
+  .sl-scores-row { display: none; }
+  .sl-expand-inner { grid-template-columns: 1fr; padding: 1.5rem; }
 }
 </style>
 </head>
@@ -1277,6 +1483,17 @@ footer {
     </div>
 
   </div>
+</section>
+
+<!-- SOCIAL LISTENING PULSE -->
+<section class="sl-section">
+  <div class="sec-head">
+    <h2 class="sec-title">Social Pulse</h2>
+    <div class="sec-rule"></div>
+    <span class="sec-count">9 Artists · Fan Sentiment &amp; Format Demand</span>
+  </div>
+  <p class="chart-hint">Sentiment scored 0–100 from Reddit, YouTube, TikTok &amp; press. Click an artist to expand the full report.</p>
+  <div class="sl-grid" id="slGrid"></div>
 </section>
 
 <!-- TERRITORY BREAKDOWN -->
@@ -1962,6 +2179,329 @@ const SONG_DATA = {
   }).catch(() => {
     svgEl.parentElement.insertAdjacentHTML('beforeend',
       '<p style="text-align:center;padding:2rem;color:var(--muted);font-size:0.8rem;">Map requires an internet connection to load.</p>');
+  });
+})();
+</script>
+
+<!-- SOCIAL LISTENING PULSE SCRIPT -->
+<script>
+(function () {
+  const SL_DATA = [
+    {
+      id: 'ed-sheeran',
+      name: 'Ed Sheeran',
+      sub: '5 songs · 12 territories this week',
+      overall: 76,
+      scores: { pos: 82, rel: 79, hype: 64, reach: 88, neg: 22 },
+      platforms: [
+        { name: 'Reddit',    s: 'pos' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'mix' },
+        { name: 'Twitter/X', s: 'mix' },
+        { name: 'Instagram', s: 'pos' },
+      ],
+      format: { scarcity: 71, reissue: 78, vinyl: 74 },
+      insights: [
+        '"Divide" era nostalgia driving catalogue resurgence across Asia-Pacific',
+        'Shape of You TikTok use spiking in JP/KR — algorithm amplification likely',
+        'High want/have ratio on Discogs for ÷ vinyl; fan community tracking anniversary',
+      ]
+    },
+    {
+      id: 'david-guetta',
+      name: 'David Guetta',
+      sub: '6 songs · 16 territories this week',
+      overall: 68,
+      scores: { pos: 74, rel: 70, hype: 55, reach: 75, neg: 28 },
+      platforms: [
+        { name: 'Reddit',    s: 'mix' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'mix' },
+        { name: 'Twitter/X', s: 'mix' },
+        { name: 'Instagram', s: 'pos' },
+      ],
+      format: { scarcity: 42, reissue: 48, vinyl: 52 },
+      insights: [
+        '"Memories" resurgence driven by algorithmic playlist placement across CEE markets',
+        'Moderate negativity from EDM communities regarding commercial sound framing',
+        'Limited physical format demand — primarily a streaming-era artist',
+      ]
+    },
+    {
+      id: 'clean-bandit',
+      name: 'Clean Bandit',
+      sub: '2 songs · 4 territories this week',
+      overall: 64,
+      scores: { pos: 71, rel: 65, hype: 52, reach: 68, neg: 18 },
+      platforms: [
+        { name: 'Reddit',    s: 'pos' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'mix' },
+        { name: 'Twitter/X', s: 'pos' },
+        { name: 'Instagram', s: 'mix' },
+      ],
+      format: { scarcity: 38, reissue: 44, vinyl: 55 },
+      insights: [
+        '"Rather Be" steady via study/focus editorial playlists across BE/NL markets',
+        'Low negativity — clean legacy, no cultural controversy signals',
+        'Moderate vinyl collector interest; limited reissue urgency at current demand level',
+      ]
+    },
+    {
+      id: 'bruno-mars',
+      name: 'Bruno Mars',
+      sub: '1 song · 3 territories this week',
+      overall: 71,
+      scores: { pos: 79, rel: 75, hype: 66, reach: 72, neg: 20 },
+      platforms: [
+        { name: 'Reddit',    s: 'pos' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'pos' },
+        { name: 'Twitter/X', s: 'pos' },
+        { name: 'Instagram', s: 'pos' },
+      ],
+      format: { scarcity: 55, reissue: 60, vinyl: 64 },
+      insights: [
+        '"Versace on the Floor" driving disco/R&B resurgence in SEA markets',
+        'Strong cross-demographic fan loyalty — very low risk profile',
+        'Original pressings trading above retail on Discogs — reissue signal present',
+      ]
+    },
+    {
+      id: 'fred-again',
+      name: 'Fred again..',
+      sub: '1 song · 2 territories this week',
+      overall: 72,
+      scores: { pos: 78, rel: 76, hype: 71, reach: 62, neg: 16 },
+      platforms: [
+        { name: 'Reddit',    s: 'pos' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'pos' },
+        { name: 'Twitter/X', s: 'pos' },
+        { name: 'Instagram', s: 'pos' },
+      ],
+      format: { scarcity: 65, reissue: 72, vinyl: 78 },
+      insights: [
+        'Actual Life series has high want/have ratio on Discogs — strong reissue signal',
+        '"Victory Lap" hype elevated in AU/NZ with Skepta collab driving hip-hop crossover',
+        'Most engaged 25–34 demographic of all charting artists — high conversion potential',
+      ]
+    },
+    {
+      id: 'anne-marie',
+      name: 'Anne-Marie',
+      sub: '1 song · 1 territory this week',
+      overall: 58,
+      scores: { pos: 65, rel: 60, hype: 48, reach: 52, neg: 24 },
+      platforms: [
+        { name: 'Reddit',    s: 'mix' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'mix' },
+        { name: 'Twitter/X', s: 'mix' },
+        { name: 'Instagram', s: 'pos' },
+      ],
+      format: { scarcity: 28, reissue: 32, vinyl: 38 },
+      insights: [
+        '"2002" remains a nostalgia driver in Malta — strong local radio sync evident',
+        'Social velocity low — limited new content generating fan engagement',
+        'Format demand minimal; primarily a streaming-era pop audience',
+      ]
+    },
+    {
+      id: 'joel-corry',
+      name: 'Joel Corry',
+      sub: '1 song · 1 territory this week',
+      overall: 55,
+      scores: { pos: 62, rel: 57, hype: 50, reach: 48, neg: 26 },
+      platforms: [
+        { name: 'Reddit',    s: 'mix' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'mix' },
+        { name: 'Twitter/X', s: 'mix' },
+        { name: 'Instagram', s: 'mix' },
+      ],
+      format: { scarcity: 22, reissue: 26, vinyl: 30 },
+      insights: [
+        '"Lonely" catalogue chart presence concentrated in Malta — narrow geographic reach',
+        'Limited organic fan community; primarily driven by nostalgia playlisting',
+        'Low format demand across all physical categories',
+      ]
+    },
+    {
+      id: 'paolo-nutini',
+      name: 'Paolo Nutini',
+      sub: '1 song · 1 territory this week',
+      overall: 62,
+      scores: { pos: 74, rel: 68, hype: 45, reach: 55, neg: 15 },
+      platforms: [
+        { name: 'Reddit',    s: 'pos' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'mix' },
+        { name: 'Twitter/X', s: 'pos' },
+        { name: 'Instagram', s: 'mix' },
+      ],
+      format: { scarcity: 58, reissue: 65, vinyl: 70 },
+      insights: [
+        '"Sunny Side Up" and "Caustic Love" both trade above retail on Discogs — clear reissue signal',
+        'Very low negativity; loyal Irish/Scottish fan base with high emotional attachment',
+        'Hype low despite high positivity — audience appreciates rather than amplifies',
+      ]
+    },
+    {
+      id: 'diljit-dosanjh',
+      name: 'Diljit Dosanjh',
+      sub: '1 song · 1 territory this week',
+      overall: 65,
+      scores: { pos: 74, rel: 72, hype: 68, reach: 55, neg: 14 },
+      platforms: [
+        { name: 'Reddit',    s: 'pos' },
+        { name: 'YouTube',   s: 'pos' },
+        { name: 'TikTok',    s: 'pos' },
+        { name: 'Twitter/X', s: 'pos' },
+        { name: 'Instagram', s: 'pos' },
+      ],
+      format: { scarcity: 35, reissue: 40, vinyl: 44 },
+      insights: [
+        '"Ranjha" charting in India driven by strong domestic streaming — solid at #197',
+        'Active Punjabi-language fan communities on YouTube and TikTok with high hype language',
+        'Format market nascent in India — limited vinyl collector infrastructure currently',
+      ]
+    },
+  ];
+
+  function scoreClass(n) {
+    if (n >= 75) return 'score-hi';
+    if (n >= 60) return 'score-mid';
+    if (n >= 45) return 'score-lo';
+    return 'score-dim';
+  }
+  function negClass(n) {
+    if (n <= 20) return 'score-mid';
+    if (n <= 35) return 'score-lo';
+    return 'score-hi';
+  }
+  function overallColor(n) {
+    if (n >= 75) return 'var(--blue)';
+    if (n >= 65) return '#1a9e5c';
+    if (n >= 50) return '#c97a00';
+    return 'var(--muted)';
+  }
+  function sentLabel(s) {
+    return s === 'pos' ? 'Positive' : s === 'mix' ? 'Mixed' : 'Negative';
+  }
+
+  const grid = document.getElementById('slGrid');
+  let activeRow = null, activeExpand = null;
+
+  SL_DATA.forEach(artist => {
+    const row = document.createElement('div');
+    row.className = 'sl-row';
+    row.setAttribute('tabindex', '0');
+    row.setAttribute('role', 'button');
+    row.setAttribute('aria-expanded', 'false');
+
+    const negRisk = artist.scores.neg > 35;
+
+    row.innerHTML = `
+      <div>
+        <p class="sl-artist-name">${artist.name}</p>
+        <p class="sl-artist-sub">${artist.sub}</p>
+      </div>
+      <div class="sl-scores-row">
+        <div class="sl-pill sl-pill--pos">POS <strong>${artist.scores.pos}</strong></div>
+        <div class="sl-pill sl-pill--hype">HYPE <strong>${artist.scores.hype}</strong></div>
+        <div class="sl-pill sl-pill--reach">REACH <strong>${artist.scores.reach}</strong></div>
+        <div class="sl-pill sl-pill--neg${negRisk ? ' risk' : ''}">NEG <strong>${artist.scores.neg}</strong></div>
+      </div>
+      <div class="sl-overall">
+        <span class="sl-overall-num" style="color:${overallColor(artist.overall)}">${artist.overall}</span>
+        <span class="sl-overall-lbl">Overall</span>
+      </div>
+    `;
+
+    const expand = document.createElement('div');
+    expand.className = 'sl-expand';
+    expand.setAttribute('aria-hidden', 'true');
+    expand.innerHTML = `
+      <div class="sl-expand-inner">
+        <div class="sl-detail-col">
+          <div>
+            <p class="sl-detail-title">Sentiment Scores</p>
+            <table class="sl-score-table">
+              <tr><td>Positivity</td><td class="${scoreClass(artist.scores.pos)}">${artist.scores.pos}</td></tr>
+              <tr><td>Relevance</td><td class="${scoreClass(artist.scores.rel)}">${artist.scores.rel}</td></tr>
+              <tr><td>Hype</td><td class="${scoreClass(artist.scores.hype)}">${artist.scores.hype}</td></tr>
+              <tr><td>Global Reach</td><td class="${scoreClass(artist.scores.reach)}">${artist.scores.reach}</td></tr>
+              <tr><td>Negativity</td><td class="${negClass(artist.scores.neg)}">${artist.scores.neg}</td></tr>
+            </table>
+          </div>
+          <div>
+            <p class="sl-detail-title">Platform Breakdown</p>
+            <div class="sl-platform-list">
+              ${artist.platforms.map(p => `
+                <div class="sl-platform-item">
+                  <span class="sl-platform-name">${p.name}</span>
+                  <span class="sl-platform-badge ${p.s}">${sentLabel(p.s)}</span>
+                </div>`).join('')}
+            </div>
+          </div>
+        </div>
+        <div class="sl-detail-col">
+          <div>
+            <p class="sl-detail-title">Physical Format Demand</p>
+            <div class="sl-format-grid">
+              <div class="sl-format-cell">
+                <span class="sl-format-num" style="color:${overallColor(artist.format.scarcity)}">${artist.format.scarcity}</span>
+                <span class="sl-format-lbl">Scarcity</span>
+              </div>
+              <div class="sl-format-cell">
+                <span class="sl-format-num" style="color:${overallColor(artist.format.reissue)}">${artist.format.reissue}</span>
+                <span class="sl-format-lbl">Reissue Opp.</span>
+              </div>
+              <div class="sl-format-cell">
+                <span class="sl-format-num" style="color:${overallColor(artist.format.vinyl)}">${artist.format.vinyl}</span>
+                <span class="sl-format-lbl">Vinyl Sent.</span>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p class="sl-detail-title">Key Insights</p>
+            <div class="sl-insights">
+              ${artist.insights.map(i => `<div class="sl-insight-item">${i}</div>`).join('')}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    grid.appendChild(row);
+    grid.appendChild(expand);
+
+    row.addEventListener('click', function () {
+      const isActive = this.classList.contains('active');
+
+      if (activeRow) {
+        activeRow.classList.remove('active');
+        activeRow.setAttribute('aria-expanded', 'false');
+        activeExpand.classList.remove('open');
+        activeExpand.setAttribute('aria-hidden', 'true');
+        activeRow = activeExpand = null;
+      }
+
+      if (!isActive) {
+        this.classList.add('active');
+        this.setAttribute('aria-expanded', 'true');
+        expand.classList.add('open');
+        expand.setAttribute('aria-hidden', 'false');
+        activeRow    = this;
+        activeExpand = expand;
+      }
+    });
+
+    row.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.click(); }
+      if (e.key === 'Escape' && activeRow)     { activeRow.click(); }
+    });
   });
 })();
 </script>
