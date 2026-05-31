@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maisie Peters — Social Listening Report · Atlantic Records UK</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:         #ffffff;
+  --surface:    #f6f6f6;
+  --surface-2:  #efefef;
+  --border:     #e4e4e4;
+  --border-mid: #cccccc;
+  --text:       #0a0a0a;
+  --text-2:     #444444;
+  --muted:      #888888;
+  --muted-2:    #bbbbbb;
+  --ink:        #0a0a0a;
+  --ink-2:      #141414;
+  --blue:       #E8001C;
+  --blue-hover: #c8001a;
+  --blue-light: #ffeaed;
+  --blue-text:  #c8001a;
+  --green:      #1a9e5c;
+  --amber:      #c97a00;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+header { background: var(--ink); }
+.header-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 2rem 3rem 1.75rem;
+  border-bottom: 1px solid #222;
+}
+.logo-wordmark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 4vw, 3.75rem);
+  line-height: 0.88;
+  letter-spacing: 0.025em;
+  color: #ffffff;
+}
+.logo-sub { display: flex; align-items: center; gap: 0.75rem; margin-top: 0.5rem; }
+.logo-uk-badge {
+  background: var(--blue);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+}
+.logo-division { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: #555; }
+.header-right { text-align: right; }
+.report-label { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #555; margin-bottom: 0.35rem; }
+.report-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1rem, 2vw, 1.5rem); letter-spacing: 0.08em; color: #ccc; line-height: 1; }
+.report-week { font-size: 0.75rem; color: #555; margin-top: 0.35rem; }
+
+.artist-hero {
+  background: var(--ink-2);
+  border-bottom: 3px solid var(--blue);
+  padding: 2.5rem 3rem;
+}
+.hero-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1.25rem;
+}
+.artist-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  letter-spacing: 0.03em;
+  line-height: 0.9;
+  color: #ffffff;
+}
+.artist-release { font-size: 0.78rem; color: #666; margin-top: 0.6rem; letter-spacing: 0.05em; }
+.artist-release em { color: #999; font-style: normal; }
+.overall-block { text-align: right; flex-shrink: 0; }
+.overall-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 5.5rem;
+  line-height: 0.88;
+  color: var(--green);
+  display: block;
+}
+.overall-lbl {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 0.4rem;
+  display: block;
+}
+.hero-rationale {
+  font-size: 0.875rem;
+  color: #888;
+  line-height: 1.6;
+  max-width: 780px;
+  border-left: 3px solid var(--blue);
+  padding-left: 1rem;
+}
+
+.scores-bar {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+.score-cell {
+  padding: 1.75rem 2rem;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+.score-cell:last-child { border-right: none; }
+.score-cell::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 2px;
+  background: var(--blue);
+  transition: width 0.25s ease;
+}
+.score-cell:hover::after { width: 100%; }
+.score-dim-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1;
+  display: block;
+}
+.score-dim-lbl {
+  display: block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+.score-dim-note {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--text-2);
+  margin-top: 0.5rem;
+  line-height: 1.4;
+}
+.c-red   { color: var(--blue); }
+.c-green { color: var(--green); }
+.c-amber { color: var(--amber); }
+.c-muted { color: var(--muted); }
+
+.sec-head {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 3rem 1.75rem;
+}
+.sec-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  letter-spacing: 0.07em;
+  white-space: nowrap;
+  line-height: 1;
+}
+.sec-rule { flex: 1; height: 1px; background: var(--border); }
+.sec-meta {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.section { border-bottom: 1px solid var(--border); }
+.section-body { padding: 0 3rem 2.5rem; }
+
+.narrative {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--text-2);
+  margin-bottom: 2rem;
+  max-width: 820px;
+}
+.signal-group { margin-bottom: 1.75rem; }
+.signal-group-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.875rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.signal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 3px solid transparent;
+  background: var(--surface);
+}
+.signal-item.positive { border-left-color: var(--green); background: #f0fbf5; }
+.signal-item.hype     { border-left-color: var(--amber); background: #fffaf0; }
+.signal-item.risk     { border-left-color: var(--blue);  background: var(--blue-light); }
+.signal-item-text { font-size: 0.8rem; color: var(--text-2); line-height: 1.5; font-style: italic; }
+.signal-item-source { font-size: 0.66rem; color: var(--muted); margin-top: 0.2rem; font-style: normal; }
+
+.word-map { padding: 0 3rem 2.5rem; }
+.word-group { margin-bottom: 1.25rem; display: flex; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+.word-group-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+.word-chips { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; padding: 0.25rem 0.75rem; border-radius: 2px; }
+.chip-pos  { background: #edfaf3; color: var(--green); }
+.chip-hype { background: #fff8e8; color: var(--amber); }
+.chip-neg  { background: var(--blue-light); color: var(--blue-text); }
+.chip-neu  { background: var(--surface-2); color: var(--text-2); }
+
+.data-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; }
+.data-table th {
+  text-align: left;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 1rem 0.75rem 0;
+  border-bottom: 2px solid var(--border);
+}
+.data-table td {
+  padding: 0.75rem 1rem 0.75rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table td:first-child { color: var(--text); font-weight: 500; }
+.td-type {
+  display: inline-block;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+}
+.td-type-interview { background: #e8f4ff; color: #1a6ebc; }
+.td-type-review    { background: #f0fbf5; color: var(--green); }
+.td-type-news      { background: var(--surface-2); color: var(--text-2); }
+.td-type-editorial { background: #fff8e8; color: var(--amber); }
+
+.sent-badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 2px;
+}
+.sent-pos { background: #edfaf3; color: var(--green); }
+.sent-mix { background: #fff8e8; color: var(--amber); }
+.sent-neg { background: var(--blue-light); color: var(--blue-text); }
+
+.format-scores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+.format-cell { background: var(--surface); padding: 1.5rem 2rem; text-align: center; }
+.format-num { font-family: 'Bebas Neue', sans-serif; font-size: 2.75rem; line-height: 1; display: block; }
+.format-lbl { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 0.4rem; display: block; }
+
+.reissue-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.reissue-card { border: 1px solid var(--border); padding: 1.5rem; position: relative; overflow: hidden; }
+.reissue-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+.reissue-card.high::before { background: var(--blue); }
+.reissue-card.mid::before  { background: var(--amber); }
+.reissue-priority { font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.5rem; }
+.reissue-card.high .reissue-priority { color: var(--blue-text); }
+.reissue-card.mid  .reissue-priority { color: var(--amber); }
+.reissue-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.04em; line-height: 1; margin-bottom: 0.5rem; }
+.reissue-format { font-size: 0.72rem; font-weight: 600; color: var(--text-2); margin-bottom: 0.75rem; }
+.reissue-rationale { font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+
+.insight-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0 2.5rem; }
+.insight-group-title {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.875rem;
+  border-bottom: 2px solid var(--border);
+}
+.insight-group-title.key   { color: var(--text); border-color: var(--text); }
+.insight-group-title.opps  { color: var(--green); border-color: var(--green); }
+.insight-group-title.risks { color: var(--blue); border-color: var(--blue); }
+.insight-item { display: flex; gap: 0.6rem; margin-bottom: 0.875rem; font-size: 0.8rem; color: var(--text-2); line-height: 1.55; }
+.insight-marker { flex-shrink: 0; font-weight: 700; margin-top: 0.05rem; }
+.insight-group-title.key   ~ .insight-item .insight-marker { color: var(--text); }
+.insight-group-title.opps  ~ .insight-item .insight-marker { color: var(--green); }
+.insight-group-title.risks ~ .insight-item .insight-marker { color: var(--blue); }
+.insight-strong { font-weight: 600; color: var(--text); }
+
+footer {
+  background: var(--ink);
+  border-top: 3px solid var(--blue);
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.footer-wordmark { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 0.04em; color: #2a2a2a; line-height: 1; }
+.footer-meta { text-align: right; font-size: 0.68rem; color: #444; line-height: 1.9; }
+
+@media (max-width: 900px) {
+  .header-top { padding: 1.5rem; flex-direction: column; align-items: flex-start; gap: 1rem; }
+  .scores-bar { grid-template-columns: repeat(3, 1fr); }
+  .score-cell { padding: 1.25rem 1.5rem; }
+  .sec-head, .section-body, .word-map { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .reissue-cards { grid-template-columns: 1fr; }
+  .insight-cols { grid-template-columns: 1fr; gap: 2rem; }
+  footer { flex-direction: column; gap: 1.5rem; padding: 2rem 1.5rem; }
+  .artist-hero { padding: 1.75rem 1.5rem; }
+  .overall-num { font-size: 4rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div>
+      <div class="logo-wordmark">Atlantic<br>Records</div>
+      <div class="logo-sub">
+        <span class="logo-uk-badge">UK</span>
+        <span class="logo-division">Social Listening Intelligence</span>
+      </div>
+    </div>
+    <div class="header-right">
+      <p class="report-label">Internal Intelligence Report</p>
+      <p class="report-title">Social Listening<br>Artist Report</p>
+      <p class="report-week">31 May 2026 &nbsp;·&nbsp; Maisie Peters</p>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<div class="artist-hero">
+  <div class="hero-row">
+    <div>
+      <h1 class="artist-title">Maisie Peters</h1>
+      <p class="artist-release">Current release: <em>Florescence</em> &nbsp;·&nbsp; Atlantic / Gingerbread Man Records &nbsp;·&nbsp; 22 May 2026</p>
+    </div>
+    <div class="overall-block">
+      <span class="overall-num">68</span>
+      <span class="overall-lbl">Overall Sentiment</span>
+    </div>
+  </div>
+  <p class="hero-rationale">Strong momentum on the back of a UK #1 debut with <em>Florescence</em>, but global reach remains predominantly UK and English-speaking markets, and a vocal minority are resisting the country/folk pivot.</p>
+</div>
+
+<section class="scores-bar">
+  <div class="score-cell"><span class="score-dim-num c-green">74</span><span class="score-dim-lbl">Positivity</span><span class="score-dim-note">Warm critical consensus; "top bracket of confessional singer-songwriters" (NME)</span></div>
+  <div class="score-cell"><span class="score-dim-num c-red">76</span><span class="score-dim-lbl">Relevance</span><span class="score-dim-note">Specific songs, production context and personal story all widely discussed</span></div>
+  <div class="score-cell"><span class="score-dim-num c-amber">62</span><span class="score-dim-lbl">Hype</span><span class="score-dim-note">Beat Michael Jackson to #1 by 262 copies — that moment landed hard</span></div>
+  <div class="score-cell"><span class="score-dim-num c-muted">42</span><span class="score-dim-lbl">Global Reach</span><span class="score-dim-note">UK-centric; English-speaking international presence (AU, US); no non-English fanbase</span></div>
+  <div class="score-cell"><span class="score-dim-num c-amber">22</span><span class="score-dim-lbl">Negativity</span><span class="score-dim-note">"Musically tepid" (The Arts Desk); country pivot polarising a minority</span></div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Fan Sentiment</h2><div class="sec-rule"></div><span class="sec-meta">Reddit · YouTube · TikTok · Twitter/X · Instagram</span></div>
+  <div class="section-body">
+    <p class="narrative">Maisie Peters is being framed — by press and fans alike — as a return-to-form artist who stepped away, healed, and came back bigger. The Sussex homecoming, mental health break, and high school sweetheart storyline are doing emotional heavy lifting across all platforms. The album's title (<em>Florescence</em> = the process of flowering) has given fans a ready shorthand for the whole arc.</p>
+    <div class="signal-group">
+      <p class="signal-group-title">Top Positive Signals</p>
+      <div class="signal-item positive"><div><p class="signal-item-text">"She's genuinely placed herself alongside Rodrigo and Chappell Roan now — this album proves it."</p><p class="signal-item-source">Album of the Year · user review thread</p></div></div>
+      <div class="signal-item positive"><div><p class="signal-item-text">"My Regards is the best song she's ever written. Full stop. The Amelia Dimoldenberg video is perfect."</p><p class="signal-item-source">Repeated sentiment across review comment sections</p></div></div>
+      <div class="signal-item positive"><div><p class="signal-item-text">"Topped the vinyl chart in week one. 8,935 units. She's doing numbers."</p><p class="signal-item-source">Music Week · fan-amplified social sharing</p></div></div>
+      <div class="signal-item positive"><div><p class="signal-item-text">"The comeback narrative is just working. You can feel she means every word."</p><p class="signal-item-source">Just Jared · iHeartRadio · Line of Best Fit — consistent framing</p></div></div>
+    </div>
+    <div class="signal-group">
+      <p class="signal-group-title">Hype Moments</p>
+      <div class="signal-item hype"><div><p class="signal-item-text">UK #1 by 262 copies over Michael Jackson — a headline that broke out of music press into general entertainment coverage, driving crossover awareness.</p></div></div>
+      <div class="signal-item hype"><div><p class="signal-item-text">Ed Sheeran surprise appearance at The Forum Melbourne — fan recording clips circulated widely; Castle on the Hill duet described as "devastating in the best way".</p></div></div>
+      <div class="signal-item hype"><div><p class="signal-item-text">Before the Bloom show announcements + album reveal generated immediate TikTok track-ranking and reaction content.</p></div></div>
+    </div>
+    <div class="signal-group">
+      <p class="signal-group-title">Risk Signals to Monitor</p>
+      <div class="signal-item risk"><div><p class="signal-item-text">"The country elements feel like a costume — she's clearly British and it shows."</p><p class="signal-item-source">NME review · The Arts Desk · Album of the Year — recurring critical framing</p></div></div>
+      <div class="signal-item risk"><div><p class="signal-item-text">"15 songs is too many. The second half doesn't hit the same."</p><p class="signal-item-source">Album of the Year user reviews — track fatigue risk for streaming performance</p></div></div>
+      <div class="signal-item risk"><div><p class="signal-item-text">Some Album of the Year superfan reviewers scoring 6/10, specifically preferring The Good Witch pop sound — vocal but minority.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Word Map</h2><div class="sec-rule"></div><span class="sec-meta">Top recurring words across fan discourse</span></div>
+  <div class="word-map">
+    <div class="word-group"><span class="word-group-label">Positive</span><div class="word-chips"><span class="chip chip-pos">bloom</span><span class="chip chip-pos">heartfelt</span><span class="chip chip-pos">healing</span><span class="chip chip-pos">confessional</span><span class="chip chip-pos">assured</span></div></div>
+    <div class="word-group"><span class="word-group-label">Hype</span><div class="word-chips"><span class="chip chip-hype">finally</span><span class="chip chip-hype">iconic</span><span class="chip chip-hype">screaming</span><span class="chip chip-hype">era</span><span class="chip chip-hype">W</span></div></div>
+    <div class="word-group"><span class="word-group-label">Negative</span><div class="word-chips"><span class="chip chip-neg">tepid</span><span class="chip chip-neg">safe</span><span class="chip chip-neg">costume</span><span class="chip chip-neg">overstuffed</span><span class="chip chip-neg">mid</span></div></div>
+    <div class="word-group"><span class="word-group-label">Descriptive</span><div class="word-chips"><span class="chip chip-neu">Nashville</span><span class="chip chip-neu">country-folk</span><span class="chip chip-neu">acoustic</span><span class="chip chip-neu">Sussex</span><span class="chip chip-neu">debut-era</span></div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Platform Breakdown</h2><div class="sec-rule"></div></div>
+  <div class="section-body">
+    <table class="data-table">
+      <thead><tr><th style="width:160px">Platform</th><th style="width:120px">Sentiment</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>Reddit</td><td><span class="sent-badge sent-mix">Mixed</span></td><td>No indexable fan threads found — community fragmented across r/popheads; absence of viral thread is a mild signal</td></tr>
+        <tr><td>YouTube</td><td><span class="sent-badge sent-pos">Positive</span></td><td>Fan track-ranking videos and reaction content active post-launch; Ed Sheeran duet clip circulating</td></tr>
+        <tr><td>TikTok</td><td><span class="sent-badge sent-mix">Mixed–Positive</span></td><td>Track ranking trend active; Two Bestfriends Hugging Trend (Maisie + sister Cate) running; no breakout viral moment yet</td></tr>
+        <tr><td>Twitter/X</td><td><span class="sent-badge sent-mix">Mixed</span></td><td>Fan accounts active (UpdatesMaisie, maisiepetersUK); sentiment broadly supportive but volume not exceptional for a #1 artist</td></tr>
+        <tr><td>Instagram</td><td><span class="sent-badge sent-pos">Positive</span></td><td>Before the Bloom shows driving visual content; personal narrative translates well to image format</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Global Reach</h2><div class="sec-rule"></div><span class="sec-meta">42 / 100</span></div>
+  <div class="section-body">
+    <table class="data-table">
+      <thead><tr><th style="width:160px">Market</th><th style="width:80px">Status</th><th>Signal</th></tr></thead>
+      <tbody>
+        <tr><td>🇬🇧 United Kingdom</td><td><span class="sent-badge sent-pos">Primary</span></td><td>#1 album, topped vinyl chart, regional press coverage indicating broad domestic reach beyond London media</td></tr>
+        <tr><td>🇦🇺 Australia</td><td><span class="sent-badge sent-pos">Active</span></td><td>Before the Bloom tour ongoing; Rolling Stone AU independent coverage; Ed Sheeran duet at The Forum Melbourne</td></tr>
+        <tr><td>🇺🇸 United States</td><td><span class="sent-badge sent-mix">Growing</span></td><td>Billboard coverage, iHeartRadio interview, Nashville recording context building US awareness; no charting evidence yet</td></tr>
+        <tr><td>🇩🇪 Germany</td><td><span class="sent-badge sent-mix">Nascent</span></td><td>THE UNSEEN Mag (Berlin) interview; modest continental European awareness, likely Eras Tour-driven</td></tr>
+        <tr><td>🇮🇪 Ireland</td><td><span class="sent-badge sent-pos">Active</span></td><td>Charting; Irish News coverage; culturally adjacent to UK market</td></tr>
+        <tr><td>KR · JP · ES · PT</td><td><span class="sent-badge sent-mix">None found</span></td><td>No fan community activity found in non-English language markets</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Press Mentions</h2><div class="sec-rule"></div><span class="sec-meta">Past 30 Days · 15 Mentions</span></div>
+  <div class="section-body">
+    <p class="narrative">Press narrative dominated by two stories: the UK #1 debut (particularly the Michael Jackson angle, which broke beyond music press) and the personal comeback arc. Peters is being positioned as a credible album artist rather than a singles-driven pop act.</p>
+    <table class="data-table">
+      <thead><tr><th style="width:200px">Outlet</th><th style="width:110px">Type</th><th>Headline</th></tr></thead>
+      <tbody>
+        <tr><td>Billboard</td><td><span class="td-type td-type-news">News</span></td><td>Maisie Peters Beats Michael Jackson for U.K.'s No. 1 Album With 'Florescence'</td></tr>
+        <tr><td>Billboard</td><td><span class="td-type td-type-interview">Interview</span></td><td>Talks New 'Florescence' LP, Opening for Taylor Swift &amp; Writing With Julia Michaels</td></tr>
+        <tr><td>Billboard</td><td><span class="td-type td-type-news">News</span></td><td>Sets Intimate 2026 Australian Theater Tour</td></tr>
+        <tr><td>NME</td><td><span class="td-type td-type-review">Review</span></td><td>'Florescence' — a singer-songwriter in full bloom</td></tr>
+        <tr><td>NME</td><td><span class="td-type td-type-news">News</span></td><td>Teams up with Amelia Dimoldenberg for 'My Regards' video</td></tr>
+        <tr><td>Rolling Stone AU</td><td><span class="td-type td-type-interview">Interview</span></td><td>Maisie Peters Steps Into Adulthood on New Album 'Florescence'</td></tr>
+        <tr><td>Rolling Stone AU</td><td><span class="td-type td-type-news">News</span></td><td>Ed Sheeran Joins Maisie Peters for Duet of 'Castle on the Hill'</td></tr>
+        <tr><td>The Line of Best Fit</td><td><span class="td-type td-type-editorial">Editorial</span></td><td>"I'm constitutionally made to be a pop star" — Cover Story</td></tr>
+        <tr><td>The Line of Best Fit</td><td><span class="td-type td-type-review">Review</span></td><td>Florescence — healing and learning to blossom</td></tr>
+        <tr><td>The Arts Desk</td><td><span class="td-type td-type-review">Review</span></td><td>Musically tepid but lyrically sharp as a tack <em style="color:var(--muted);font-size:0.72em">(mixed)</em></td></tr>
+        <tr><td>Just Jared</td><td><span class="td-type td-type-news">News</span></td><td>Eras Tour Opener Reveals If She's Been Invited to Taylor Swift's Wedding</td></tr>
+        <tr><td>iHeartRadio</td><td><span class="td-type td-type-interview">Interview</span></td><td>Talks 'My Regards,' her writing style, her new album &amp; more</td></tr>
+        <tr><td>Music Week</td><td><span class="td-type td-type-news">News</span></td><td>Scores second No. 1 album with opening sales up 44%</td></tr>
+        <tr><td>Far Out Magazine</td><td><span class="td-type td-type-review">Review</span></td><td>Maisie Peters – 'Florescence' album review <em style="color:var(--muted);font-size:0.72em">(positive)</em></td></tr>
+        <tr><td>Alt Press</td><td><span class="td-type td-type-interview">Interview</span></td><td>Artist Friendly Podcast — Ep. 167 with Joel Madden</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Physical Format Demand</h2><div class="sec-rule"></div><span class="sec-meta">Discogs · Retail · Collector Community</span></div>
+  <div class="section-body">
+    <div class="format-scores">
+      <div class="format-cell"><span class="format-num c-muted">38</span><span class="format-lbl">Scarcity Score</span></div>
+      <div class="format-cell"><span class="format-num c-green">65</span><span class="format-lbl">Reissue Opportunity</span></div>
+      <div class="format-cell"><span class="format-num c-green">72</span><span class="format-lbl">Vinyl Community Sentiment</span></div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Release</th><th>Have</th><th>Want</th><th>Ratio</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td>The Good Witch (2023)</td><td>~427</td><td>~127</td><td>0.30x</td><td>Standard black LP; growing slowly — Florescence success will accelerate</td></tr>
+        <tr><td>You Signed Up For This (2021)</td><td>~111</td><td>~57</td><td>0.51x</td><td>Debut LP; limited pressing history; undervalued against Peters' now-#1 profile</td></tr>
+        <tr><td>The Good Witch Deluxe — RSD (2024)</td><td>—</td><td>—</td><td>—</td><td>Coloured vinyl; collector editions; higher demand signals</td></tr>
+        <tr><td>Florescence (2026)</td><td>—</td><td>—</td><td>New</td><td>Dandelion Edition EcoRecord (indie exclusive, 140g transparent); topped UK vinyl chart week-1 with 8,935 units</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:0.75rem;color:var(--muted);margin-top:1.25rem;line-height:1.6;"><strong style="color:var(--text-2)">Collector pulse:</strong> Florescence Dandelion Edition appearing in unboxing content; EcoRecord format generating novelty interest. <em>You Signed Up For This</em> is the sleeper: a debut album from a now-#1 artist with a modest original pressing run — pricing will move before the collector community catches up.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Reissue Recommendations</h2><div class="sec-rule"></div></div>
+  <div class="section-body">
+    <div class="reissue-cards">
+      <div class="reissue-card high"><p class="reissue-priority">High Priority</p><p class="reissue-title">You Signed Up For This</p><p class="reissue-format">Limited Colour Vinyl LP · 500 copies · Gatefold + lyric booklet</p><p class="reissue-rationale">Debut album from an artist who has now achieved two consecutive UK #1s. Original pressing run is modest; Discogs want list growing as Peters' profile rises. Classic "catalogue reissue window" — act before it becomes a collector item by accident and pricing expectations set against you.</p></div>
+      <div class="reissue-card mid"><p class="reissue-priority">Medium Priority</p><p class="reissue-title">The Good Witch</p><p class="reissue-format">Expanded Colour Vinyl · 1,000 copies · 2-LP with B-sides or live recordings</p><p class="reissue-rationale">427 Discogs owners with a growing want list; the album that opened the Eras Tour chapter. Florescence's success will drive catalogue discovery back to The Good Witch. The timing window is now — the fan base is primed and awareness is at peak.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="sec-head"><h2 class="sec-title">Key Insights &amp; Action Points</h2><div class="sec-rule"></div></div>
+  <div class="section-body">
+    <div class="insight-cols">
+      <div class="insight-group">
+        <p class="insight-group-title key">Key Insights</p>
+        <div class="insight-item"><span class="insight-marker">1.</span><span><span class="insight-strong">Commercial peak, cultural moment.</span> Two consecutive UK #1s with 43.7% sales growth between albums. Peters is in an ascent phase — format and catalogue decisions made now will benefit from significant tailwind.</span></div>
+        <div class="insight-item"><span class="insight-marker">2.</span><span><span class="insight-strong">The Taylor Swift proximity is a double-edged asset.</span> The Eras Tour association brings scale and credibility but risks reducing perceived originality. The critical framing alongside Rodrigo and Chappell Roan is the healthier long-term narrative.</span></div>
+        <div class="insight-item"><span class="insight-marker">3.</span><span><span class="insight-strong">Physical buyer base is real and activated.</span> Topping the UK vinyl chart week-1 with 8,935 units is a committed fanbase spending money — high-conversion audience for limited editions and back-catalogue physical releases.</span></div>
+      </div>
+      <div class="insight-group">
+        <p class="insight-group-title opps">Opportunities</p>
+        <div class="insight-item"><span class="insight-marker">→</span><span>Catalogue vinyl reissue programme for <em>You Signed Up For This</em> — debut album reissue while she's at commercial peak</span></div>
+        <div class="insight-item"><span class="insight-marker">→</span><span>Australian market investment — genuine fanbase; Before the Bloom shows suggest full arena campaign potential within 12–18 months</span></div>
+        <div class="insight-item"><span class="insight-marker">→</span><span>Sync/editorial — healing/homecoming narrative and acoustic-country production make Florescence tracks prime candidates for TV/film placement</span></div>
+      </div>
+      <div class="insight-group">
+        <p class="insight-group-title risks">Risks to Monitor</p>
+        <div class="insight-item"><span class="insight-marker">⚠</span><span><span class="insight-strong">Genre pivot fatigue</span> — if country costuming criticism gains momentum in UK media it could complicate the Florescence campaign's second act; watch The Guardian and BBC Music</span></div>
+        <div class="insight-item"><span class="insight-marker">⚠</span><span><span class="insight-strong">15-track sequencing</span> — streaming drop-off after track 8–10 is a real risk; monitor Spotify skip rates and playlist add rates for second-half tracks</span></div>
+        <div class="insight-item"><span class="insight-marker">⚠</span><span><span class="insight-strong">Reddit absence</span> — lack of indexable fan discussion threads is a mild signal; fragmented community is harder to activate for release moments</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p class="footer-wordmark">Atlantic</p>
+  <div class="footer-meta">
+    <p>Social Listening Artist Report — Maisie Peters</p>
+    <p>Generated 31 May 2026 &nbsp;·&nbsp; ATL UK Social Listening</p>
+    <p>Sources: Billboard · NME · Rolling Stone AU · Line of Best Fit · The Arts Desk · Music Week · Discogs</p>
+    <p style="margin-top:0.4rem;color:#2a2a2a;">For internal use only &nbsp;·&nbsp; Atlantic Records UK</p>
+  </div>
+</footer>
+
+</body>
+</html>
